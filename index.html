@@ -16,7 +16,7 @@
   <meta name="theme-color" content="#0F1F4A">
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=2.3">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.4">
 </head>
 <body>
 
@@ -270,53 +270,150 @@
     <section class="section section-pale" id="corporateSimulation">
       <div class="container">
         <div class="section-header text-center">
-          <span class="eyebrow-badge">The Differentiator</span>
-          <h2>The 5 Pillars of the Corporate Software-Team Simulation</h2>
-          <p class="lead">
+          <span class="eyebrow-badge amber" style="letter-spacing: 0.12em; text-transform: uppercase;">— Real-World Learning —</span>
+          <h2 style="font-size: clamp(1.9rem, 3.4vw + 0.5rem, 2.75rem); color: var(--color-dark-navy);">
+            The 5 Pillars of the Corporate Software–<span style="color: var(--color-amber);">Team Simulation</span>
+          </h2>
+          <p class="lead" style="max-width: 780px; margin: 0 auto;">
             Students experience how software-team work is assigned, developed, reviewed, integrated, and delivered—not just how to write code in isolation.
           </p>
         </div>
 
-        <div class="pillars-grid">
-          <div class="pillar-card">
-            <div class="pillar-number">1</div>
-            <h3>Assigned Work</h3>
-            <p>
-              Receive requirements formatted as structured software tasks. Learn to read technical briefs, clarify ambiguous edge cases, and estimate implementation steps.
-            </p>
-          </div>
+        <div class="folder-pillars-grid" id="folderPillarsGrid">
+          <!-- Pillar 01: Assigned Work -->
+          <article class="folder-card" tabindex="0" aria-labelledby="pillar-title-01">
+            <div class="folder-card-media">
+              <img src="assets/images/pillar-01-assigned-work.jpg" alt="Software specifications and wireframe designs on developer desk" class="folder-card-img" width="600" height="338" loading="lazy">
+              <div class="folder-media-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="folder-card-panel">
+              <div class="folder-tab-bar">
+                <svg class="folder-tab-svg" viewBox="0 0 360 52" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M 0,52 L 0,16 C 0,7 7,0 16,0 L 108,0 C 117,0 124,7 127,16 L 138,40 C 141,47 148,52 156,52 L 360,52 L 360,53 L 0,53 Z" fill="#0B1536"/>
+                </svg>
+                <span class="folder-number" aria-hidden="true">01</span>
+                <div class="folder-arrow-btn" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h12m-6-6l6 6-6 6"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="folder-card-content">
+                <h3 class="folder-title" id="pillar-title-01">Assigned Work</h3>
+                <p class="folder-desc">
+                  Receive requirements formatted as structured software tasks. Learn to read technical briefs, clarify ambiguous edge cases, and estimate implementation steps.
+                </p>
+              </div>
+            </div>
+          </article>
 
-          <div class="pillar-card">
-            <div class="pillar-number">2</div>
-            <h3>Feature Engineering</h3>
-            <p>
-              Develop assigned components with clean architecture, adhering to team conventions, modular design patterns, and maintainable data models.
-            </p>
-          </div>
+          <!-- Pillar 02: Feature Engineering -->
+          <article class="folder-card" tabindex="0" aria-labelledby="pillar-title-02">
+            <div class="folder-card-media">
+              <img src="assets/images/pillar-02-feature-engineering.jpg" alt="Developer code editor on high-resolution display with syntax highlighting" class="folder-card-img" width="600" height="338" loading="lazy">
+              <div class="folder-media-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="folder-card-panel">
+              <div class="folder-tab-bar">
+                <svg class="folder-tab-svg" viewBox="0 0 360 52" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M 0,52 L 0,16 C 0,7 7,0 16,0 L 108,0 C 117,0 124,7 127,16 L 138,40 C 141,47 148,52 156,52 L 360,52 L 360,53 L 0,53 Z" fill="#0B1536"/>
+                </svg>
+                <span class="folder-number" aria-hidden="true">02</span>
+                <div class="folder-arrow-btn" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h12m-6-6l6 6-6 6"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="folder-card-content">
+                <h3 class="folder-title" id="pillar-title-02">Feature Engineering</h3>
+                <p class="folder-desc">
+                  Develop assigned components with clean architecture, adhering to team conventions, modular design patterns, and maintainable data models.
+                </p>
+              </div>
+            </div>
+          </article>
 
-          <div class="pillar-card">
-            <div class="pillar-number">3</div>
-            <h3>Team Coordination</h3>
-            <p>
-              Collaborate on interface contracts, avoid breaking changes across interdependent modules, and communicate blockers proactively.
-            </p>
-          </div>
+          <!-- Pillar 03: Team Coordination -->
+          <article class="folder-card" tabindex="0" aria-labelledby="pillar-title-03">
+            <div class="folder-card-media">
+              <img src="assets/images/pillar-03-team-coordination.jpg" alt="Software engineering squad collaborating in front of an agile Kanban board" class="folder-card-img" width="600" height="338" loading="lazy">
+              <div class="folder-media-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="folder-card-panel">
+              <div class="folder-tab-bar">
+                <svg class="folder-tab-svg" viewBox="0 0 360 52" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M 0,52 L 0,16 C 0,7 7,0 16,0 L 108,0 C 117,0 124,7 127,16 L 138,40 C 141,47 148,52 156,52 L 360,52 L 360,53 L 0,53 Z" fill="#0B1536"/>
+                </svg>
+                <span class="folder-number" aria-hidden="true">03</span>
+                <div class="folder-arrow-btn" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h12m-6-6l6 6-6 6"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="folder-card-content">
+                <h3 class="folder-title" id="pillar-title-03">Team Coordination</h3>
+                <p class="folder-desc">
+                  Collaborate on interface contracts, avoid breaking changes across interdependent modules, and communicate blockers proactively.
+                </p>
+              </div>
+            </div>
+          </article>
 
-          <div class="pillar-card">
-            <div class="pillar-number">4</div>
-            <h3>Review &amp; Integration</h3>
-            <p>
-              Participate in peer code reviews, examine logic for maintainability, resolve merge collisions, and verify automated test pass criteria.
-            </p>
-          </div>
+          <!-- Pillar 04: Review & Integration -->
+          <article class="folder-card" tabindex="0" aria-labelledby="pillar-title-04">
+            <div class="folder-card-media">
+              <img src="assets/images/pillar-04-review-integration.jpg" alt="Git pull request review interface showing passing build checks and diffs" class="folder-card-img" width="600" height="338" loading="lazy">
+              <div class="folder-media-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="folder-card-panel">
+              <div class="folder-tab-bar">
+                <svg class="folder-tab-svg" viewBox="0 0 360 52" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M 0,52 L 0,16 C 0,7 7,0 16,0 L 108,0 C 117,0 124,7 127,16 L 138,40 C 141,47 148,52 156,52 L 360,52 L 360,53 L 0,53 Z" fill="#0B1536"/>
+                </svg>
+                <span class="folder-number" aria-hidden="true">04</span>
+                <div class="folder-arrow-btn" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h12m-6-6l6 6-6 6"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="folder-card-content">
+                <h3 class="folder-title" id="pillar-title-04">Review &amp; Integration</h3>
+                <p class="folder-desc">
+                  Participate in peer code reviews, examine logic for maintainability, resolve merge collisions, and verify automated test pass criteria.
+                </p>
+              </div>
+            </div>
+          </article>
 
-          <div class="pillar-card">
-            <div class="pillar-number">5</div>
-            <h3>Shared Deliverable</h3>
-            <p>
-              Deploy and validate the integrated application build, witnessing how multiple individual contributions combine into a production-grade product.
-            </p>
-          </div>
+          <!-- Pillar 05: Shared Deliverable -->
+          <article class="folder-card" tabindex="0" aria-labelledby="pillar-title-05">
+            <div class="folder-card-media">
+              <img src="assets/images/pillar-05-shared-deliverable.jpg" alt="Modular 3D cubic architecture representing unified software deliverable" class="folder-card-img" width="600" height="338" loading="lazy">
+              <div class="folder-media-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="folder-card-panel">
+              <div class="folder-tab-bar">
+                <svg class="folder-tab-svg" viewBox="0 0 360 52" preserveAspectRatio="none" aria-hidden="true">
+                  <path d="M 0,52 L 0,16 C 0,7 7,0 16,0 L 108,0 C 117,0 124,7 127,16 L 138,40 C 141,47 148,52 156,52 L 360,52 L 360,53 L 0,53 Z" fill="#0B1536"/>
+                </svg>
+                <span class="folder-number" aria-hidden="true">05</span>
+                <div class="folder-arrow-btn" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 10h12m-6-6l6 6-6 6"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="folder-card-content">
+                <h3 class="folder-title" id="pillar-title-05">Shared Deliverable</h3>
+                <p class="folder-desc">
+                  Deploy and validate the integrated application build, witnessing how multiple individual contributions combine into a production-grade product.
+                </p>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>

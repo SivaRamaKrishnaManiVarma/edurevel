@@ -105,4 +105,35 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 4. Folder Cards Accessible Interaction (Touch & Keyboard support)
+  const folderCards = document.querySelectorAll('.folder-card');
+  if (folderCards.length > 0) {
+    folderCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const wasActive = card.classList.contains('is-active');
+        folderCards.forEach(c => c.classList.remove('is-active'));
+        if (!wasActive) {
+          card.classList.add('is-active');
+        }
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const wasActive = card.classList.contains('is-active');
+          folderCards.forEach(c => c.classList.remove('is-active'));
+          if (!wasActive) {
+            card.classList.add('is-active');
+          }
+        }
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.folder-card')) {
+        folderCards.forEach(c => c.classList.remove('is-active'));
+      }
+    });
+  }
 });
