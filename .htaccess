@@ -1,0 +1,80 @@
+# ==============================================================================
+# EduRevel Production Apache Configuration (.htaccess)
+# Domain: edurevel.com | Supports clean URLs, trailing slash normalization,
+# browser caching, security headers, compression & custom 404 handling.
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1. Normalize: Redirect /index or /index.html directly to folder root /
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.*?)/index(?:\.html)?[\s?] [NC]
+  RewriteRule ^ /%1/ [R=301,L]
+
+  # 2. Normalize: Remove trailing slash from non-directories (e.g. /contact/ -> /contact)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} ^(.+)/+$
+  RewriteRule ^ %1 [R=301,L]
+
+  # 3. Clean URLs: 301 redirect direct requests ending in .html to clean URL
+  RewriteCond %{REQUEST_METHOD} !POST
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.*?)\.html[\s?] [NC]
+  RewriteRule ^ /%1 [R=301,L]
+
+  # 4. Clean URLs: Internally forward clean URLs to .html files
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+
+</IfModule>
+
+# Custom Error Documents
+<If "%{HTTP_HOST} =~ /localhost/">
+  ErrorDocument 404 /edurevel/404.html
+</If>
+<Else>
+  ErrorDocument 404 /404.html
+</Else>
+
+# Production Security Headers
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# Production Browser Caching & Performance
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  # HTML documents: brief cache to allow fast content deployment
+  ExpiresByType text/html "access plus 1 hour"
+
+  # Stylesheets & Scripts: 1 year (cache-busted with query param ?v=...)
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+
+  # Images & Icons
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Fonts
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+
+  # Web Manifest & Data
+  ExpiresByType application/manifest+json "access plus 1 week"
+  ExpiresByType application/json "access plus 1 hour"
+  ExpiresByType application/xml "access plus 1 hour"
+</IfModule>
+
+# Gzip / Deflate Compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+</IfModule>
